@@ -8,7 +8,6 @@ public class PlayerJump : MonoBehaviour
     private Rigidbody2D rigidBody;
 
     private bool isJumping = false;
-    private Vector2 direction;
     private float horizontalInput;
 
     [SerializeField]
@@ -29,7 +28,22 @@ public class PlayerJump : MonoBehaviour
     void Update()
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
-        Debug.Log($"{isGrounded()} and {horizontalInput}");
+        if (Input.GetKeyDown("space"))
+        {
+            isJumping = isGrounded();
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        if (isJumping && isGrounded())
+        {
+            Vector2 jumpVelocity = rigidBody.velocity;
+            jumpVelocity.y = jumpForce;
+            rigidBody.velocity = jumpVelocity;
+
+            isJumping = false;
+        }
     }
 
     private bool isGrounded()

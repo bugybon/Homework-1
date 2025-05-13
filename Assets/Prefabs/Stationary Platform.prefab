@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1136787578891615620}
   m_Layer: 8
   m_Name: Stationary Platform
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -191,3 +191,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitbox: {fileID: 1938506705401802739}
   isMoving: 0
+  isFalling: 0
+  time: 1

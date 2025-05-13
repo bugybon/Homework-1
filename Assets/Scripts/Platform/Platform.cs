@@ -19,12 +19,12 @@ public class Platform : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Legs"))
         {
             hitbox.enabled = true;
             if (isMoving)
             {
-                collision.gameObject.transform.SetParent(this.transform);
+                collision.gameObject.transform.parent.SetParent(this.transform);
             }
             if (isFalling)
             {

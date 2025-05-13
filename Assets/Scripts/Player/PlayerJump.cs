@@ -8,11 +8,6 @@ public class PlayerJump : MonoBehaviour
     private Rigidbody2D rigidBody;
 
     private bool isJumping = false;
-    private float horizontalInput;
-
-    [SerializeField]
-    [Range(1,30)]
-    private float speed = 10;
 
     [SerializeField]
     [Range(1, 30)]
@@ -27,7 +22,6 @@ public class PlayerJump : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        horizontalInput = Input.GetAxisRaw("Horizontal");
         if (Input.GetKeyDown("space"))
         {
             isJumping = isGrounded();

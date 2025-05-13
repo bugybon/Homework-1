@@ -32,6 +32,7 @@ public class PlayerMovement : MonoBehaviour
             target.x = direction * movementSpeed;
             rigidBody.velocity = target;
         }
+
     }
 
     private void ResolveDirection()
